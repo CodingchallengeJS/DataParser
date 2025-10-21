@@ -14,14 +14,14 @@ File chính ở đây là `main.py`
 `python -m pip install -r requirements.txt`
 
 Sau đó bạn hãy chạy lệnh này để auto-parse file thành file md tổng quát:
-
-`python main.py`
-
+```
+python main.py
+```
 Output của mỗi file pdf sẽ được lưu tại `<đường dẫn file>/<tên file>/output/`
 
 Nếu bạn muốn convert sang qti file thì bạn có thể chạy lệnh sau:
 
-`python convert2qti.py`
+python convert2qti.py
 
 * Chúng tôi cũng đã tạo file `runpy.bat` để tự động chạy các lệnh này
 
