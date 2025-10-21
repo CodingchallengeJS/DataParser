@@ -1,11 +1,11 @@
-## Mục đích
+# Mục đích
 Parse tất cả file pdf trong thư mục yêu cầu, sẽ output ra thư mục `<tên file>/output` ở trong thư mục yêu cầu đấy
 
 Trong output này có quan trọng nhất là file final.md là ghép tất cả các trang
 
-## Hướng dẫn chạy
+# Hướng dẫn chạy
 
-# Chạy bằng Python
+## Chạy bằng Python
 
 File chính ở đây là `main.py`
 
@@ -25,7 +25,7 @@ python convert2qti.py
 
 * Chúng tôi cũng đã tạo file `runpy.bat` để tự động chạy các lệnh này
 
-# Chạy bằng Jupyter Notebook (Dành cho mục đích phát triển)
+## Chạy bằng Jupyter Notebook (Dành cho mục đích phát triển)
 
 File chính ở đây là `main.ipynb`
 
