@@ -2,15 +2,12 @@
 import ast
 import base64
 import json
-import logging
 import os
 import re
 import time
 import zipfile
-from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
-# --- Third-Party Library Imports ---
 from dotenv import find_dotenv, load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -18,7 +15,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-# --- Selenium WebDriver and Options Setup ---
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
@@ -27,7 +23,7 @@ options.add_argument("--window-size=1920,1080")
 options.add_experimental_option(
     "prefs",
     {
-        "download.default_directory": "D\\Python\\DataForge-automated\\MathTHPT2025",
+        "download.default_directory": os.getcwd(),
         "download.prompt_for_download": False,
         "download.directory_upgrade": True,
         "safebrowsing.enabled": False,
@@ -83,35 +79,6 @@ except Exception:
         loading_folder = [
             s.strip() for s in re.split(r"[;,]", loading_folder_env) if s.strip()
         ]
-
-# --- Logging Setup ---
-log_dir = Path(data_dir)
-log_dir.mkdir(parents=True, exist_ok=True)
-log_path = log_dir / "process.log"
-
-logger = logging.getLogger("pdf_processor")
-logger.setLevel(logging.INFO)
-
-if not any(
-    isinstance(h, RotatingFileHandler) and h.baseFilename == str(log_path)
-    for h in logger.handlers
-):
-    fh = RotatingFileHandler(
-        str(log_path), maxBytes=5 * 1024 * 1024, backupCount=5, encoding="utf-8"
-    )
-    fh.setLevel(logging.INFO)
-    fmt = logging.Formatter(
-        "%(asctime)s %(levelname)s: %(message)s", "%Y-%m-%d %H:%M:%S"
-    )
-    fh.setFormatter(fmt)
-    logger.addHandler(fh)
-
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.INFO)
-    ch.setFormatter(fmt)
-    logger.addHandler(ch)
-
-log = logger.info
 
 # --- Main PDF Processing Loop ---
 for folder in loading_folder:

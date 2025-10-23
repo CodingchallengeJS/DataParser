@@ -23,7 +23,7 @@ Nếu bạn muốn convert sang qti file thì bạn có thể chạy lệnh sau:
 ```
 python convert2qti.py
 ```
-* Chúng tôi cũng đã tạo file `runpy.bat` để tự động chạy các lệnh này
+* Chúng tôi cũng đã tạo file `run_py.bat` để tự động chạy các lệnh này
 
 ## Chạy bằng Jupyter Notebook (Dành cho mục đích phát triển)
 
@@ -43,3 +43,4 @@ Nếu bạn muốn convert sang qti file thì bạn có thể chạy lệnh sau:
 ```
 jupyter nbconvert --to notebook --execute QTIconvert.ipynb --output executed_notebook2.ipynb
 ```
+* Chúng tôi cũng đã tạo file `run_ipynb.bat` để tự động chạy các lệnh này
