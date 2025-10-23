@@ -1,9 +1,9 @@
 # Mục đích
 Mục đích của chương trình này là tự động hóa chuyển hàng loạt từ file .pdf sang định dạng .txt
 
-Parse tất cả file .pdf trong thư mục `input/` thư mục `<tên file>/output` trong thư mục này
+Parse tất cả file .pdf trong thư mục `input/` và xuất kết quả ra thư mục `<tên file>/output` trong thư mục này
 
-Trong output này có quan trọng nhất là file final.md là ghép tất cả các trang
+Trong thư mục output này, file final.md là ghép tất cả các trang
 
 # Hướng dẫn chạy
 
