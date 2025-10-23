@@ -1,5 +1,7 @@
+requests
 selenium
 python-dotenv
 langchain
 langchain-openai
 langchain-google-genai
+canvasapi

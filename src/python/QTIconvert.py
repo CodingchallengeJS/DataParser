@@ -227,7 +227,7 @@ def upload_qti_to_canvas(file_path: str):
         print("No new quiz was created.")
         return None
 
-# --- Process text2qti and Upload to Canvas ---
+# --- Process text2qti ---
 for folder in loading_folder:
     folder_path = os.path.join(data_dir, folder)
     if not os.path.isdir(folder_path):
@@ -269,7 +269,7 @@ for folder in loading_folder:
         except Exception as e:
             print(f"Error running text2qti on {out_path}: {e}")
             continue
-
+        """
         zip_path = os.path.join(file_path, "output", "final.text2qti.zip")
         if os.path.exists(zip_path):
             try:
@@ -282,3 +282,4 @@ for folder in loading_folder:
                 print(f"Upload failed for {zip_path}: {e}")
         else:
             print(f"QTI zip not found: {zip_path}")
+        #"""
